@@ -1,26 +1,27 @@
-RSpec.describe Diamond do
+# frozen_string_literal: true
 
+RSpec.describe Diamond do
   let(:instance) { described_class.new }
 
   describe '#build' do
     subject { instance.build(input) }
 
-    context "when given an A character" do
+    context 'when given an A character' do
       let(:input) { 'A' }
       it { is_expected.to eq("A\n") }
     end
 
-    context "when given a B character" do
+    context 'when given a B character' do
       let(:input) { 'B' }
       it { is_expected.to eq("_A_\nB_B\n_A_\n") }
     end
 
-    context "when given a C character" do
+    context 'when given a C character' do
       let(:input) { 'C' }
       it { is_expected.to eq("__A__\n_B_B_\nC___C\n_B_B_\n__A__\n") }
     end
 
-    context "when given a J character" do
+    context 'when given a J character' do
       let(:input) { 'J' }
       it { is_expected.to eq(<<~EXAMPLE) }
         _________A_________
@@ -45,5 +46,4 @@ RSpec.describe Diamond do
       EXAMPLE
     end
   end
-
 end
